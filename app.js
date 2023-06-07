@@ -16,6 +16,7 @@ app.use(express.static(publicPath));
 io.on("connection", (socket) => {
   console.log("A new user is just connected");
 
+  
   socket.emit("newMessage", generateMessage("Admin", "Welcome to ChatHub!!!"));
 
   socket.broadcast.emit(
@@ -36,10 +37,17 @@ io.on("connection", (socket) => {
     );
   });
 
+
+
   socket.on("disconnect", () => {
     console.log("User was diconnected");
   });
 });
+
+
+
+
+
 
 server.listen(port, () => {
   console.log(`Server started at ${port}`);

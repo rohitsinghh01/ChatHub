@@ -5,24 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>ChatHub</title>
 </head>
 
-<body>
-    <h1>Welcome to ChatHub</h1>
+<body class="login">
+    <div class="container">
+        <h1>ChatHub</h1>
+        <form action="/chat.html">
+            <div class="form-control">
+                <input type="text" required name="name">
+                <label>Your Name</label>
+            </div>
 
-    <form action="" id="message-form">
-        <input type="text" name="message">
-        <button type="submit" id="submit-btn">Submit</button>
-    </form>
-    <button id="send-location">Send Location</button>
+            <div class="form-control">
+                <input type="" required name="room">
+                <label>Room Name</label>
+            </div>
 
+            <div class="gender">
+                <label>Gender : </label>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+            </div>
 
-
-
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="./js/index.js"></script>
+            <button class="btn join">JOIN NOW</button>
+        </form>
+    </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
