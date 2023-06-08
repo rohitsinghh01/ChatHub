@@ -79,7 +79,7 @@ body {
   transform: scale(0.98);
 }
 
-.join{
+.join {
   font-weight: 900;
 }
 
@@ -138,16 +138,15 @@ body {
   font-size: 18px;
   margin-left: 5px;
 }
+input[type="radio"] {
+  cursor: pointer;
+}
 
 button,
 button:hover {
   border: none;
   color: #000;
   /* padding: 10px; */
-}
-.chat__messages,
-.chat__sidebar ul {
-  list-style-type: none;
 }
 
 /* CHAT PAGE */
@@ -157,9 +156,11 @@ li {
 
 .chat-bdy {
   background-color: #000;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .chat-bdy::before {
-  background: url(../Images/group-people-with-laptops.jpg) no-repeat center
+  background: url(../Images/teenagers-using-mobile-phones.jpg) no-repeat center
     center/cover fixed;
   content: "";
   position: absolute;
@@ -252,6 +253,7 @@ li {
   margin-right: 5px;
 }
 
+
 .vertical {
   border: 1px solid #7231ec;
   height: 100vh;
@@ -260,7 +262,6 @@ li {
 }
 
 .chat-main {
-  scrollbar-width: thin;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -284,6 +285,12 @@ li {
   display: flex;
   align-items: center;
   margin-top: auto;
+}
+
+.chat-time{
+  margin-left: 120px;
+  color: #777777;
+  font-weight: 600;
 }
 
 .chat-form .butn {
@@ -331,4 +338,9 @@ li {
 .chat-header .chat-name {
   font-size: 1rem;
   color: #7231ec;
+}
+
+.chat-message p{
+  font-size: 1.1rem;
+  font-weight: 500;
 }

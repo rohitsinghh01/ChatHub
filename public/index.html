@@ -12,7 +12,7 @@
 <body class="login">
     <div class="container">
         <h1>ChatHub</h1>
-        <form action="/chat.html">
+        <form action="/chat.html" name="login">
             <div class="form-control">
                 <input type="text" required name="name">
                 <label>Your Name</label>
@@ -25,12 +25,12 @@
 
             <div class="gender">
                 <label>Gender : </label>
-                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="male" required> Male
                 <input type="radio" name="gender" value="female"> Female
                 <input type="radio" name="gender" value="other"> Other
             </div>
 
-            <button class="btn join">JOIN NOW</button>
+            <button class="btn join" value="submit">JOIN NOW</button>
         </form>
     </div>
     <script src="./js/script.js"></script>

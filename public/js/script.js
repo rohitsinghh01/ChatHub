@@ -9,3 +9,11 @@ labels.forEach((label) => {
     )
     .join("");
 });
+
+const form = document.forms.login;
+function handleSubmit(event) {
+  const formData = new FormData(event.target);
+  const data = [...formData.entries()];
+  localStorage.setItem("gender", data[2][1]);
+}
+form.addEventListener('submit', handleSubmit);
