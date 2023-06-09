@@ -14,6 +14,7 @@ class Users {
     let namesArray = users.map((user) => user.name);
 
     return namesArray;
+    // console.log(namesArray)
   }
 
   getUser(id) {

@@ -5,28 +5,28 @@ function scrolltoBottom() {
   messages.scrollIntoView();
 }
 
-function setUserImage() {
-  let gender = localStorage.getItem("gender");
-  var randomImage = new Array();
-  if (gender === "male") {
-    randomImage[0] = "https://bootdey.com/img/Content/user_1.jpg";
-    randomImage[1] = "https://bootdey.com/img/Content/user_3.jpg";
-    randomImage[2] = "https://bootdey.com/img/Content/user_6.jpg";
-    randomImage[3] = "https://bootdey.com/img/Content/user_5.jpg";
-    var number = Math.floor(Math.random() * randomImage.length);
-    document.getElementById("cht-img").innerHTML =
-      '<img src="' + randomImage[number] + '" />';
-    document.getElementById("userImg").innerHTML =
-      '<img src="' + randomImage[number] + '" />';
-  } else {
-    randomImage[0] = "https://bootdey.com/img/Content/user_2.jpg";
-    var number = Math.floor(Math.random() * randomImage.length);
-    document.getElementById("cht-img").innerHTML =
-      '<img src="' + randomImage[number] + '" />';
-    document.getElementById("userImg").innerHTML =
-      '<img src="' + randomImage[number] + '" />';
-  }
-}
+// function setUserImage() {
+//   let gender = localStorage.getItem("gender");
+//   var randomImage = new Array();
+//   if (gender === "male") {
+//     randomImage[0] = "https://bootdey.com/img/Content/user_1.jpg";
+//     randomImage[1] = "https://bootdey.com/img/Content/user_3.jpg";
+//     randomImage[2] = "https://bootdey.com/img/Content/user_6.jpg";
+//     randomImage[3] = "https://bootdey.com/img/Content/user_5.jpg";
+//     var number = Math.floor(Math.random() * randomImage.length);
+//     document.getElementById("cht-img").innerHTML =
+//       '<img src="' + randomImage[number] + '" />';
+//     document.getElementById("userImg").innerHTML =
+//       '<img src="' + randomImage[number] + '" />';
+//   } else {
+//     randomImage[0] = "https://bootdey.com/img/Content/user_2.jpg";
+//     var number = Math.floor(Math.random() * randomImage.length);
+//     document.getElementById("cht-img").innerHTML =
+//       '<img src="' + randomImage[number] + '" />';
+//     document.getElementById("userImg").innerHTML =
+//       '<img src="' + randomImage[number] + '" />';
+//   }
+// }
 
 // LISTENING FOR CONNECTION
 socket.on("connect", function () {
@@ -53,6 +53,20 @@ socket.on("connect", function () {
 // LISTENING FOR DISCONNECTION
 socket.on("disconnect", function () {
   console.log("Disconnected to the server....");
+});
+
+socket.on("updateUsersList", function (users) {
+  let ol = document.createElement("ol");
+
+  users.forEach(function (user) {
+    let li = document.createElement("li");
+    li.innerHTML = user;
+    ol.appendChild(li);
+  });
+
+  let usersList = document.querySelector("#user-list");
+  usersList.innerHTML = "";
+  usersList.appendChild(ol);
 });
 
 // LISTENING FOR NEW MESSAGE FROM THE SERVER

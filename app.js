@@ -60,9 +60,9 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     let user = users.removeUser(socket.id);
-    console.log(user.room)
+    // console.log(user.room)
     if (user) {
-      io.to(user.room).emit("updateUsersList", users.getUserList(users.room));
+      io.to(user.room).emit("updateUsersList", users.getUserList(user.room));
       io.to(user.room).emit(
         "newMessage",
         generateMessage(

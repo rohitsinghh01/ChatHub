@@ -14,34 +14,21 @@ body {
 }
 
 /* LOGIN PAGE */
-
 .login {
-  /* background-color: steelblue; */
-  /* background: url('../Images/SL_071219_21480_25.jpg'); */
+  background-image: url(../Images/SL_071219_21480_25.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  margin: 3px auto 0;
+  position: relative;
   color: #fff;
-  font-family: "Muli", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  margin: 0;
 }
-
-.login::before {
-  background: url(../Images/SL_071219_21480_25.jpg) no-repeat center
-    center/cover fixed;
-  content: "";
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* opacity: 0.4; */
-}
-
 .container {
   /* background-color: rgba/(0, 0, 0, 0.4); */
   padding: 20px 40px;
@@ -50,8 +37,9 @@ body {
 
 .container h1 {
   font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 30px;
+  /* text-align: center; */
+  margin-left: 50px;
+  margin-bottom: 15px;
 }
 
 .container a {
@@ -130,18 +118,6 @@ body {
   transform: translateY(-30px);
 }
 
-.gender {
-  margin: 10px 0 20px 0;
-}
-
-.gender label {
-  font-size: 18px;
-  margin-left: 5px;
-}
-input[type="radio"] {
-  cursor: pointer;
-}
-
 button,
 button:hover {
   border: none;
@@ -213,46 +189,21 @@ li {
   margin-bottom: 30px;
 }
 
-.list {
+.chat-sidebar li {
   background-color: #7231ec;
-  height: 80px;
+  height: 60px;
   border-radius: 10px;
   margin: 0 10px 10px 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.user {
-  color: whitesmoke;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
 }
 
-.user-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+#user-list {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
 }
-
-.user-img {
-  margin: 0 30px 0 20px;
-}
-
-.user-name {
-  font-size: 1.2rem;
-  margin-top: 17px;
-  margin-bottom: 20px;
-}
-
-.user-img img {
-  width: 50px;
-  border-radius: 100px;
-}
-
-.time {
-  margin-right: 5px;
-}
-
 
 .vertical {
   border: 1px solid #7231ec;
@@ -287,7 +238,7 @@ li {
   margin-top: auto;
 }
 
-.chat-time{
+.chat-time {
   margin-left: 120px;
   color: #777777;
   font-weight: 600;
@@ -340,7 +291,11 @@ li {
   color: #7231ec;
 }
 
-.chat-message p{
+.chat-message p {
   font-size: 1.1rem;
   font-weight: 500;
+}
+
+.chat-message a {
+  color: #fff;
 }
